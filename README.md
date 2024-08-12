@@ -8,10 +8,10 @@ Spring Boot
 
 ## Annotations
 
-@Controller	- Converts a class to a controller. The Class now becomes entry point for all web requests. The class can now have handler methods
-@GetMapping	- Used to annotate a handler method for get
-@PostMapping	- Used to annotate a handler method for post
-@RequestParam
+* @Controller	- Converts a class to a controller. The Class now becomes entry point for all web requests. The class can now have handler methods
+* @GetMapping	- Used to annotate a handler method for get
+* @PostMapping	- Used to annotate a handler method for post
+* @RequestParam
 
 ```
 ex. 
