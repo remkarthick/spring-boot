@@ -21,3 +21,6 @@ ex. getGrades is a handler method.
 public String getGrades(Model model){
 }
 ```
+# Three Layer Architecture
+
+Controller class --calls--> Service class  --calls--> Repository class
