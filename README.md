@@ -24,7 +24,13 @@ public String getGrades(Model model){
 # Three Layer Architecture
 
 Controller class --calls--> Service class  --calls--> Repository class
-- Create an object of Service class in Controller class and Create an object of Repository class inside Service class
+
+Old Method : Create an object of Service class in Controller class and Create an object of Repository class inside Service class
+
+New Method : Instead of above, create a @Component of Service class and @Component of Repository class and @Autowired them instead of creating object
+
+Note : Instead of using @Component use @Service/@Repository. All are same and creates Bean
+
 
 * Repository class - Data Access Layer : CRUD Operations should be inside Repository class. It is the Data access layer. This should not communicate with the Controller class directly. Should use the Service class for communication with controller 
 * Service class    - Business Layer : Business Logic layer. This is middle man between the Controller and Repository.
