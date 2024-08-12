@@ -68,3 +68,15 @@ public ResponseEntity<Grade> getGrades(@PathVariable String id){
   return new ResponseEntity<>(new Grade("ABC",100), HttpStatus.OK); 
 }
 ```
+
+@RequestBody
+
+ex. postGrades is a handler method. 
+```
+@PostMapping("/grades/{id}")
+@ResponseBody
+public ResponseEntity<HttpStatus> postGrades(@PathVariable String id, Grade grade){
+  gradeService.createGrade(grade);
+ return new ResponseEntity<>(HttpStatus.CREATED); 
+}
+```
