@@ -24,3 +24,7 @@ public String getGrades(Model model){
 # Three Layer Architecture
 
 Controller class --calls--> Service class  --calls--> Repository class
+
+* Repository class - Data Access Layer : CRUD Operations should be inside Repository class. It is the Data access layer. This should not communicate with the Controller class directly. Should use the Service class for communication with controller 
+* Service class    - Business Layer : Business Logic layer. This is middle man between the Controller and Repository.
+* Controller class - Presentation Layer (Model +View are here in this layer). Controllers only concern should be managing the model and presenting the view.
