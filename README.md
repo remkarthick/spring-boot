@@ -35,3 +35,20 @@ Note : Instead of using @Component use @Service/@Repository. All are same and cr
 * Repository class - Data Access Layer : CRUD Operations should be inside Repository class. It is the Data access layer. This should not communicate with the Controller class directly. Should use the Service class for communication with controller 
 * Service class    - Business Layer : Business Logic layer. This is middle man between the Controller and Repository.
 * Controller class - Presentation Layer (Model +View are here in this layer). Controllers only concern should be managing the model and presenting the view.
+
+# Rest API
+
+@RestController = @Controller + @ResponseBody
+
+@ResponseBody - Serializes an Object into JSON
+
+@PathVariable
+
+ex. getGrades is a handler method. 
+```
+@GetMapping("/grades/{id}")
+@ResponseBody
+public String getGrades(@PathVariable String id){
+  return new Grade("ABC",100); // this object will return as a JSON because we have the @ResponseBody annotation added
+}
+```
