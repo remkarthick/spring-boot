@@ -38,17 +38,33 @@ Note : Instead of using @Component use @Service/@Repository. All are same and cr
 
 # Rest API
 
+
+@ResponseBody - Serializes an Object into JSON, without this object will be returned as object and there will be error. Can be annotated at class level or handlerMethod level.
+
+@PathVariable - To retrieve path variable
+@RequestParam - To get query variables
+
+
+ex. getGrades is a handler method. 
+```
+@GetMapping("/grades/{id}?name=Bingo")
+@ResponseBody
+public Grade getGrades(@PathVariable String id, @RequestParam String name){
+  return new Grade("ABC",100); // this object will return as a JSON because we have the @ResponseBody annotation added
+}
+```
+
 @RestController = @Controller + @ResponseBody
 
-@ResponseBody - Serializes an Object into JSON
+ - @RestController must be annotated at class level so all handler methods will serialize objects to json on return statement.
 
-@PathVariable
+@ResponseEntity - instead of returning Object return it as a ResponseEntity
 
 ex. getGrades is a handler method. 
 ```
 @GetMapping("/grades/{id}")
 @ResponseBody
-public String getGrades(@PathVariable String id){
-  return new Grade("ABC",100); // this object will return as a JSON because we have the @ResponseBody annotation added
+public ResponseEntity<Grade> getGrades(@PathVariable String id){
+  return new ResponseEntity<>(new Grade("ABC",100), HttpStatus.OK); 
 }
 ```
