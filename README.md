@@ -69,13 +69,13 @@ public ResponseEntity<Grade> getGrades(@PathVariable String id){
 }
 ```
 
-@RequestBody
+@RequestBody - deserialize the request body json string to object
 
 ex. postGrades is a handler method. 
 ```
 @PostMapping("/grades/{id}")
 @ResponseBody
-public ResponseEntity<HttpStatus> postGrades(@PathVariable String id, Grade grade){
+public ResponseEntity<HttpStatus> postGrades(@PathVariable String id, @RequestBody Grade grade){
   gradeService.createGrade(grade);
  return new ResponseEntity<>(HttpStatus.CREATED); 
 }
