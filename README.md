@@ -1,4 +1,4 @@
-Spring Boot
+Spring Boot Quick Reference
 
 # MVC - Model, View and Controller
 
@@ -13,10 +13,11 @@ Spring Boot
 * @PostMapping	- Used to annotate a handler method for post
 * @RequestParam
 
+## Handler Method
+Every handler method has access to the model passed as its function parameter.
+ex. getGrades is a handler method. 
 ```
-ex. 
 @GetMapping("/grades")
-public String getGrades(){
-//getGrades is a handler method
+public String getGrades(Model model){
 }
 ```
